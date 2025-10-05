@@ -1,5 +1,5 @@
 {
-  "name": "@ricardoneud.com/api",
+  "name": "ricardoneud.com/api",
   "description": "Official SDK for the API from Ricardoneud.com, fully compatible with all PHP environments",
   "type": "library",
   "license": "MIT",
