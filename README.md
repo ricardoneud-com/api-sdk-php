@@ -114,7 +114,7 @@ $loginResponse = $api->user->login('usernameOrEmail', 'password', true);
 $api->user->revokeSecret('usernameOrEmail', 'password', 'secret-token');
 ```
 
-### OAuth
+### OAuth2
 
 ```php
 $token = $api->oauth2->getAccessToken('code', 'redirectUri', 'clientId', 'clientSecret');
