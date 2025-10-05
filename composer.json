@@ -1,0 +1,23 @@
+{
+  "name": "ricardoneud.com/api",
+  "description": "Official SDK for the API from Ricardoneud.com, fully compatible with all PHP environments",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ricardoneud.com",
+      "email": "info@ricardoneud.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "guzzlehttp/guzzle": "^7.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ricardoneud\\API\\": "src/"
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
