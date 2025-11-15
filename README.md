@@ -1,7 +1,5 @@
 # Composer Module for API Usage
 
-This guide explains how to use the **official Composer PHP module** to interact with the API. It covers **installation, setup, authentication, and using the main modules** such as games, tools, reseller, and user management.
-
 > ⚠️ **Important:** Always verify which endpoints are available in which version. Not all endpoints exist in every version, and some features are only available from v3 and above. Make sure your project uses a supported API version.
 
 ## Installation
@@ -12,7 +10,7 @@ composer require ricardoneud.com/api
 
 ## Initialization
 
-The client can be initialized with either an **API Key** or a **Secret token**:
+The client can be initialized with either an **API Key**, a **Secret token**, and optionally a **custom URL**:
 
 ```php
 <?php
@@ -22,9 +20,17 @@ require 'vendor/autoload.php';
 use Ricardoneud\API\RicardoneudAPI;
 
 $api = new RicardoNeudAPI([
-    'apiKey' => 'your-api-key', // OR use 'secret' => 'your-secret'
+    'apiKey' => 'your-api-key',   // OR use 'secret' => 'your-secret'
     'version' => 'v4'
 ]);
+```
+
+### Changing Base URL
+
+You can change the API endpoint at runtime using `setURL`:
+
+```php
+$api->setURL('https://sandbox.api.ricardoneud.com'); // Switch to sandbox environment
 ```
 
 ### Changing Version
@@ -139,4 +145,6 @@ try {
 * You must provide either an **API Key** or a **Secret token**.
 * Secret tokens expire after 24 hours and are visible in your dashboard.
 * API Key and Secret are mutually exclusive; setting one clears the other.
+* You can optionally provide a **custom `baseURL`** at initialization. If omitted, the SDK defaults to `https://api.ricardoneud.com`.
+* The `setURL` method allows switching API domains at runtime (e.g., sandbox).
 * Always check the supported API version to ensure endpoint compatibility.
