@@ -1,5 +1,7 @@
 # Composer Module for API Usage
 
+This guide explains how to use the **official Composer module** to interact with the API. It covers **installation, setup, authentication, and using the main modules** such as games, tools, reseller, and user management.
+
 > ⚠️ **Important:** Always verify which endpoints are available in which version. Not all endpoints exist in every version, and some features are only available from v3 and above. Make sure your project uses a supported API version.
 
 ## Installation
