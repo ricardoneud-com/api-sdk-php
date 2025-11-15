@@ -58,20 +58,45 @@ class RicardoNeudAPI {
         }
     }
 
+    public function setURL(string $url): self {
+        $this->baseURL = $url;
+        $this->client = new Client([
+            'base_uri' => "{$this->baseURL}/{$this->version}/",
+            'timeout' => $this->client->getConfig('timeout'),
+            'headers' => $this->getHeaders()
+        ]);
+        return $this;
+    }
+
     public function setVersion(string $version): self {
         $this->version = $version;
+        $this->client = new Client([
+            'base_uri' => "{$this->baseURL}/{$this->version}/",
+            'timeout' => $this->client->getConfig('timeout'),
+            'headers' => $this->getHeaders()
+        ]);
         return $this;
     }
 
     public function setApiKey(string $apiKey): self {
         $this->apiKey = $apiKey;
         $this->secret = null;
+        $this->client = new Client([
+            'base_uri' => "{$this->baseURL}/{$this->version}/",
+            'timeout' => $this->client->getConfig('timeout'),
+            'headers' => $this->getHeaders()
+        ]);
         return $this;
     }
 
     public function setSecret(string $secret): self {
         $this->secret = $secret;
         $this->apiKey = null;
+        $this->client = new Client([
+            'base_uri' => "{$this->baseURL}/{$this->version}/",
+            'timeout' => $this->client->getConfig('timeout'),
+            'headers' => $this->getHeaders()
+        ]);
         return $this;
     }
 }
